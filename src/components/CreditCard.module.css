@@ -1,0 +1,15 @@
+.card_wrapper {
+  display: flex;
+  flex: 50%;
+  margin-top: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.credit_card {
+  background: linear-gradient(to right, #242426, #727376);
+  border-radius: 15px;
+  min-height: 80%;
+  width: 90%;
+  margin: auto;
+}
