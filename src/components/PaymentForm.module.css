@@ -1,0 +1,26 @@
+.form_wrapper {
+  flex: 50%;
+  margin-top: 1.25rem;
+}
+
+.name_input {
+  margin-top: 0.5rem;
+}
+
+.input {
+  font-size: 1rem;
+  width: 90%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: solid;
+  border-width: 2px;
+  border-color: #ced4da;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 6px 3px rgb(171, 217, 255);
+  -webkit-box-shadow: 0px 0px 3px 3px rgb(171, 217, 255);
+  -moz-box-shadow: 0px 0px 3px 3px rgb(171, 217, 255);
+}

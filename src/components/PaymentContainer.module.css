@@ -10,7 +10,7 @@
   border-radius: 12px;
 }
 
-.title {
+.payment_header {
   width: 100%;
   border-bottom: solid;
   border-width: 2px;
@@ -22,4 +22,8 @@
   color: #06283d;
   font-weight: 500;
   padding-bottom: 5px;
+}
+
+.payment_body {
+  display: flex;
 }
