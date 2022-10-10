@@ -4,12 +4,53 @@
   margin-top: 1.25rem;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .credit_card {
   background: linear-gradient(to right, #242426, #727376);
   border-radius: 15px;
-  min-height: 80%;
-  width: 90%;
+  width: 80%;
+  padding-top: 50%;
   margin: auto;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.logo img {
+  width: 4vw;
+}
+
+.name {
+  position: absolute;
+  font-size: 1vw;
+  bottom: 5%;
+  left: 8%;
+}
+
+.date {
+  position: absolute;
+  font-size: 1vw;
+  bottom: 15%;
+  left: 8%;
+}
+
+.number {
+  position: absolute;
+  font-size: 1.25vw;
+  bottom: 25%;
+  left: 8%;
+}
+
+.card_chip img {
+  width: 3.5vw;
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
 }
