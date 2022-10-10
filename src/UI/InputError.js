@@ -1,6 +1,6 @@
 import classes from "./InputError.module.css";
 
-const InputError = () => {
-  return <div className={classes.input_error}>This field cannot be empty!</div>;
+const InputError = (props) => {
+  return <div className={classes.input_error}>{props.content}</div>;
 };
 export default InputError;
