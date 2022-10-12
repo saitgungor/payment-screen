@@ -7,13 +7,15 @@
   color: white;
 }
 
-.credit_card {
+.not_flipped {
   background: linear-gradient(to right, #242426, #727376);
   border-radius: 15px;
   width: 80%;
   padding-top: 50%;
   margin: auto;
   position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
 }
 
 .logo {
@@ -53,4 +55,33 @@
   left: 8%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.flipped {
+  background: linear-gradient(to right, #242426, #727376);
+  border-radius: 15px;
+  width: 80%;
+  padding-top: 50%;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  transform: rotateY(180deg);
+}
+
+.front {
+  backface-visibility: hidden;
+}
+
+.back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.magnetic_strip {
+  position: absolute;
+  width: 100%;
+  background: black;
+  height: 50px;
+  top: 0;
 }

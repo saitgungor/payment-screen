@@ -1,46 +1,43 @@
 import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
-import { nameActions } from "../../store/name-slice";
+import { cvvActions } from "../../store/cvv-slice";
 
 import InputError from "../../UI/InputError";
 
-const NameInput = () => {
+const CvvInput = () => {
   const [showError, setShowError] = useState(false);
   const [erorrContent, setErrorContent] = useState("");
   const dispatch = useDispatch();
 
   const onChangeHandler = (event) => {
-    dispatch(nameActions.nameHandler(event.target.value));
+    dispatch(cvvActions.cvvHandler(event.target.value));
   };
 
   const onBlurHandler = (event) => {
-    const name = event.target.value;
+    dispatch(cvvActions.flipCardHandler(false));
+    const cvv = event.target.value;
     setShowError(true);
-    if (name.trim().length === 0) {
+    if (cvv.trim().length === 0) {
       setErrorContent("This field cannot be empty!");
-    } else if (
-      name.split(" ").length === 1 ||
-      name.split(" ").some((str) => str === "")
-    ) {
-      setErrorContent("Please enter your full name!");
     } else {
       setShowError(false);
     }
   };
 
   const onFocusHandler = () => {
+    dispatch(cvvActions.flipCardHandler(true));
     setShowError(false);
   };
 
   return (
     <Fragment>
       <div>
-        <label htmlFor="name-on-card"></label>
+        <label htmlFor="cvv-on-card"></label>
         <input
-          type="text"
-          id="name-on-card"
-          pattern="^[a-zA-Z]+$"
-          placeholder="Name on card"
+          type="number"
+          maxLength="3"
+          id="cvv-on-card"
+          placeholder="CVV/CVC"
           onChange={onChangeHandler}
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}
@@ -51,4 +48,4 @@ const NameInput = () => {
   );
 };
 
-export default NameInput;
+export default CvvInput;
