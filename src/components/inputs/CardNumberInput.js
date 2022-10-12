@@ -23,16 +23,14 @@ const CardNumberInput = () => {
   };
 
   const onBlurHandler = (event) => {
+    const number = event.target.value;
     setShowError(true);
-    if (event.target.value.trim().length === 0) {
+    if (number.trim().length === 0) {
       setErrorContent("This field cannot be empty!");
-      console.log("1", event.target.value.trim().length);
-    } else if (event.target.value.trim().length < 19) {
+    } else if (number.trim().length < 19) {
       setErrorContent("Please enter a valid card number");
-      console.log("2", event.target.value.trim().length);
     } else {
       setShowError(false);
-      console.log("3", event.target.value.trim().length);
     }
   };
 
@@ -43,11 +41,12 @@ const CardNumberInput = () => {
   return (
     <Fragment>
       <div>
-        <label htmlFor="card-number" id="card-number"></label>
+        <label htmlFor="card-number"></label>
         <input
           type="text"
           placeholder="Card Number"
           maxLength="23"
+          id="card-number"
           onChange={onChangeHandler}
           onBlur={onBlurHandler}
           onFocus={onFocusHandler}
