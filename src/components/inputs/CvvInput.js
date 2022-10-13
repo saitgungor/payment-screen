@@ -34,7 +34,7 @@ const CvvInput = () => {
       <div>
         <label htmlFor="cvv-on-card"></label>
         <input
-          type="number"
+          type="text"
           maxLength="3"
           id="cvv-on-card"
           placeholder="CVV/CVC"
