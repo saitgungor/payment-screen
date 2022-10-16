@@ -11,8 +11,11 @@ const CardNumberInput = () => {
   const [fetchContent, setFetchContent] = useState("");
   const [erorrContent, setErrorContent] = useState("");
   const dispatch = useDispatch();
-  if (isBinAvailable) helper(fetchContent);
-
+  let data;
+  if (isBinAvailable) {
+    data = helper(fetchContent);
+  }
+  console.log(data);
   const formatCardNumber = (value) =>
     value
       .replace(/\s/g, "")
