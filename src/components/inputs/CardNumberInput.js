@@ -3,11 +3,15 @@ import { useDispatch } from "react-redux";
 
 import { numberActions } from "../../store/number-slice";
 import InputError from "../../UI/InputError";
+import { helper } from "../../helper/helper";
 
 const CardNumberInput = () => {
   const [showError, setShowError] = useState(false);
+  const [isBinAvailable, setBinAvailable] = useState(false);
+  const [fetchContent, setFetchContent] = useState("");
   const [erorrContent, setErrorContent] = useState("");
   const dispatch = useDispatch();
+  if (isBinAvailable) helper(fetchContent);
 
   const formatCardNumber = (value) =>
     value
@@ -18,6 +22,12 @@ const CardNumberInput = () => {
 
   const onChangeHandler = (event) => {
     const { value } = event.target;
+    const cardNumber = value.replaceAll(" ", "");
+    if (cardNumber.length >= 6) {
+      const bin = cardNumber.split("").splice(0, 6).join("");
+      setBinAvailable(true);
+      setFetchContent(bin);
+    }
     event.target.value = formatCardNumber(value);
     dispatch(numberActions.numberHandler(event.target.value));
   };

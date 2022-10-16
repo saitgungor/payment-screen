@@ -4,6 +4,7 @@ const numberSlice = createSlice({
   name: "number",
   initialState: {
     numberOnCard: "",
+    binObj: {},
   },
   reducers: {
     numberHandler(state, action) {
