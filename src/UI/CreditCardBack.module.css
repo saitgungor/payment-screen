@@ -1,5 +1,7 @@
 .credit_card {
   position: absolute;
+  background: linear-gradient(to right, #242426, #727376);
+  border-radius: 15px;
   top: 50%;
   left: 50%;
   width: 100%;
