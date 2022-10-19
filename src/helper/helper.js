@@ -11,4 +11,5 @@ export const helper = async (endPoint) => {
   );
   const data = await response.json();
   console.log(data);
+  return data;
 };
